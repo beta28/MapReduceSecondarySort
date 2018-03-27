@@ -22,7 +22,7 @@ public class SecondarySortMapper extends Mapper<LongWritable, Text, PersonEntity
      */
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] personValue = value.toString().split(",");
-        context.write(new PersonEntity(personValue[0], personValue[1]), new Text(personValue[0]));
+        context.write(new PersonEntity(personValue[1], personValue[0]), new Text(personValue[1]));
         LOG.info("Data emitted from mapper : {} , {}", personValue[0], personValue[1]);
     }
 }

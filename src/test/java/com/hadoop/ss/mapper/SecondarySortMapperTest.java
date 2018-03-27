@@ -42,7 +42,7 @@ public class SecondarySortMapperTest {
         for (String list : testList) {
             String[] listArr = list.split(",");
             mapDriver.withInput(new LongWritable(0), new Text(list));
-            mapDriver.addOutput(new PersonEntity(listArr[0], listArr[1]), new Text(listArr[0]));
+            mapDriver.addOutput(new PersonEntity(listArr[1], listArr[0]), new Text(listArr[1]));
             mapDriver.runTest();
         }
     }
