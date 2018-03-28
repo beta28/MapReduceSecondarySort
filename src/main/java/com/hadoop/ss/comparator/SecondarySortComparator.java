@@ -11,6 +11,12 @@ public class SecondarySortComparator extends WritableComparator {
         super(PersonEntity.class, true);
     }
 
+    /**
+     *
+     * @param o1
+     * @param o2
+     * @return
+     */
     public int compare(WritableComparable o1, WritableComparable o2) {
         PersonEntity p1 = (PersonEntity) o1;
         PersonEntity p2 = (PersonEntity) o2;
