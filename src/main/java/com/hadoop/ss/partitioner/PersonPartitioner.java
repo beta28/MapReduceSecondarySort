@@ -8,6 +8,6 @@ public class PersonPartitioner extends Partitioner<PersonEntity, Text> {
 
     @Override
     public int getPartition(PersonEntity personEntity, Text text, int numOfReducers) {
-        return personEntity.getLastName().hashCode() % numOfReducers;
+        return Math.abs(personEntity.getLastName().hashCode() % numOfReducers);
     }
 }
